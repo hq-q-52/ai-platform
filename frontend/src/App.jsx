@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://ai-platform-production-24f5.up.railway.app/api';
 
 export default function App() {
   const [models, setModels] = useState([]);
