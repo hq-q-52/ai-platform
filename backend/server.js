@@ -71,10 +71,8 @@ app.post('/api/chat', async (req, res) => {
 
 app.get('/api/models', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
-  res.json(Object.keys(modelConfigs).map(id => ({
-    id,
-    name: id
-  })));
+  // 直接返回字符串数组：["deepseek-chat", "deepseek-reasoner", "qwen-max"...]
+  res.json(Object.keys(modelConfigs));
 });
 
 const PORT = process.env.PORT || 8080;
