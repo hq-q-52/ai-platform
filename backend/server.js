@@ -71,7 +71,10 @@ app.post('/api/chat', async (req, res) => {
 
 app.get('/api/models', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
-  res.json(Object.keys(modelConfigs));
+  res.json(Object.keys(modelConfigs).map(id => ({
+    id,
+    name: id
+  })));
 });
 
 app.listen(process.env.PORT, () => {
